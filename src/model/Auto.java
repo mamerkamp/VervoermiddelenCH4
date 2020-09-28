@@ -12,12 +12,14 @@ public class Auto extends Voertuig {
     public Auto(String merk, String type, int aantalWielen, int gewicht, String soortBrandstof) {
         super(merk, type, aantalWielen, gewicht);
         this.soortBrandstof = soortBrandstof;
-        int nieuweID = 0;
-        nieuweID = getAantalVervoermiddelen() + 1;
+        int nieuweID = getId() + 1;
+//        int nieuweID = getAantalVervoermiddelen() + 1;
         setId(nieuweID);
     }
 
+    @Override
     public String geefAandrijfKracht(){
-        return "Benzine";
+
+        return soortBrandstof;
     }
 }

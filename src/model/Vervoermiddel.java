@@ -13,6 +13,8 @@ public abstract class Vervoermiddel {
     protected Vervoermiddel(String merk, String type) {
         this.merk = merk;
         this.type = type;
+        aantalVervoermiddelen++;
+
     }
 
     public Vervoermiddel() {
@@ -22,12 +24,17 @@ public abstract class Vervoermiddel {
         return "Test aandrijfkracht";
     }
 
+    @Override
+    public String toString() {
+        return String.format("Vervoermiddel #%d",getId());
+    }
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = aantalVervoermiddelen;
     }
 
     public static int getAantalVervoermiddelen() {

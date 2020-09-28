@@ -6,22 +6,27 @@ package model;
  */
 public abstract class Vaartuig extends Vervoermiddel{
 
-    private int lengteInMeter;
+    private double lengteInMeter;
 
-    protected Vaartuig(String merk, String type, int lengteInMeter) {
+    protected Vaartuig(String merk, String type, double lengteInMeter) {
         super(merk, type);
         this.lengteInMeter = lengteInMeter;
+
     }
 
     protected Vaartuig() {
 
     }
 
-    public int getLengteInMeter() {
+    public String toString(){
+        return String.format("%s %s, type %s, van %.2f meter", super.toString(), getMerk(), getType(), getLengteInMeter());
+    }
+
+    public double getLengteInMeter() {
         return lengteInMeter;
     }
 
-    public void setLengteInMeter(int lengteInMeter) {
+    public void setLengteInMeter(double lengteInMeter) {
         this.lengteInMeter = lengteInMeter;
     }
 }
