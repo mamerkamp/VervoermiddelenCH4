@@ -13,7 +13,6 @@ public class Auto extends Voertuig {
         super(merk, type, aantalWielen, gewicht);
         this.soortBrandstof = soortBrandstof;
         int nieuweID = getId() + 1;
-//        int nieuweID = getAantalVervoermiddelen() + 1;
         setId(nieuweID);
     }
 
@@ -21,5 +20,10 @@ public class Auto extends Voertuig {
     public String geefAandrijfKracht(){
 
         return soortBrandstof;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s motor.", super.toString(), geefAandrijfKracht());
     }
 }

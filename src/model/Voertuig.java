@@ -18,8 +18,7 @@ public abstract class Voertuig extends Vervoermiddel {
     }
 
     public String toString(){
-        return String.format("%s %s %s aangedreven door %s motor", super.toString(), getMerk(), getType(),
-                geefAandrijfKracht());
+        return String.format("%s %s %s aangedreven door", super.toString(), getMerk(), getType());
     }
 
     public int getAantalWielen() {

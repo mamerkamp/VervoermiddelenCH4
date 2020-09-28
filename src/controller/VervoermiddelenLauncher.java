@@ -1,6 +1,7 @@
 package controller;
 
 import model.Auto;
+import model.Koets;
 import model.Vervoermiddel;
 import model.Zeilboot;
 
@@ -18,12 +19,11 @@ public class VervoermiddelenLauncher {
         ArrayList<Vervoermiddel> voertuigen = new ArrayList<>();
         voertuigen.add(new Auto("Dacia", "Logan MPV", 4, 1150, "benzine"));
         voertuigen.add(new Zeilboot("Dufour", "36 classic", 11.5));
+        voertuigen.add(new Koets("Broesder", "Kotter", 1100, 4));
 
         for (Vervoermiddel vervoermiddel : voertuigen) {
             System.out.println(vervoermiddel);
         }
-
-
     }
 
 }
