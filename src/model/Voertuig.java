@@ -17,6 +17,10 @@ public abstract class Voertuig extends Vervoermiddel {
     protected Voertuig() {
     }
 
+    public String toString(){
+        return String.format("%s, type %s, %d kg, rijdt op BRANDSTOF", getMerk(), getType(), getGewicht());
+    }
+
     public int getAantalWielen() {
         return aantalWielen;
     }
