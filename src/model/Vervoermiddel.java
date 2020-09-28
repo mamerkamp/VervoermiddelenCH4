@@ -13,7 +13,8 @@ public abstract class Vervoermiddel {
     protected Vervoermiddel(String merk, String type) {
         this.merk = merk;
         this.type = type;
-        aantalVervoermiddelen++;
+        this.id = ++aantalVervoermiddelen;
+       // this.id = aantalVervoermiddelen++;
 
     }
 

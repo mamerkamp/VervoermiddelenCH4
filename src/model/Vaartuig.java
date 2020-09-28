@@ -11,7 +11,6 @@ public abstract class Vaartuig extends Vervoermiddel{
     protected Vaartuig(String merk, String type, double lengteInMeter) {
         super(merk, type);
         this.lengteInMeter = lengteInMeter;
-
     }
 
     protected Vaartuig() {

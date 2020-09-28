@@ -12,8 +12,6 @@ public class Auto extends Voertuig {
     public Auto(String merk, String type, int aantalWielen, int gewicht, String soortBrandstof) {
         super(merk, type, aantalWielen, gewicht);
         this.soortBrandstof = soortBrandstof;
-        int nieuweID = getId() + 1;
-        setId(nieuweID);
     }
 
     @Override

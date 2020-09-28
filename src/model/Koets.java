@@ -10,23 +10,28 @@ public class Koets extends Voertuig{
 
     public Koets(String merk, String type, int gewicht, int aantalPaarden) {
         super(merk, type, gewicht, aantalPaarden);
-        this.aantalPaarden = aantalPaarden;
-        int nieuweID = getId() + 1;
-        setId(nieuweID);
+        this.setAantalPaarden(aantalPaarden);
     }
 
     public Koets(int aantalPaarden) {
-        this.aantalPaarden = aantalPaarden;
+        this.setAantalPaarden(aantalPaarden);
     }
 
     @Override
-    public String geefAandrijfKracht(){
-
-        return String.format("%d paarden", aantalPaarden); //TODO paard of paarden maken adhv aantal
+    public String geefAandrijfKracht() {
+        return String.format("%d paarden", getAantalPaarden()); //TODO paard of paarden maken adhv aantal
     }
 
     @Override
     public String toString() {
         return String.format("%s %s", super.toString(), geefAandrijfKracht());
+    }
+
+    public void setAantalPaarden(int aantalPaarden) {
+        this.aantalPaarden = aantalPaarden;
+    }
+
+    public int getAantalPaarden() {
+        return aantalPaarden;
     }
 }
