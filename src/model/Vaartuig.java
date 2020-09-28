@@ -19,7 +19,7 @@ public abstract class Vaartuig extends Vervoermiddel{
     }
 
     public String toString(){
-        return String.format("%s %s, type %s, van %.2f meter", super.toString(), getMerk(), getType(), getLengteInMeter());
+        return String.format("%s %s %s aangedreven door %s", super.toString(), getMerk(), getType(), geefAandrijfKracht());
     }
 
     public double getLengteInMeter() {

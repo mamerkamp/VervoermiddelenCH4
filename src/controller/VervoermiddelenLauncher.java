@@ -21,8 +21,6 @@ public class VervoermiddelenLauncher {
 
         for (Vervoermiddel vervoermiddel : voertuigen) {
             System.out.println(vervoermiddel);
-
-
         }
 
 
