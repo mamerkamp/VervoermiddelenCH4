@@ -28,6 +28,23 @@ public class VervoermiddelenLauncher {
             }
         }
 
+
+        System.out.println("");
+        System.out.println("Enkel de voertuigen die belasting betalen");
+        for (Vervoermiddel vervoermiddel : voertuigen) {
+            if (vervoermiddel instanceof Belastbaar) {
+                System.out.printf("%s %.2f euro belasting per kwartaal\n", vervoermiddel,
+                        ((Belastbaar) vervoermiddel).getVervoerBelasting());
+            }
+        }
+
+        System.out.println("");
+        System.out.println("Enkel de voertuigen die geen belasting betalen.");
+        for (Vervoermiddel vervoermiddel : voertuigen) {
+            if (!(vervoermiddel instanceof Belastbaar)) {
+                System.out.println(vervoermiddel);
+            }
+        }
     }
 
 }
