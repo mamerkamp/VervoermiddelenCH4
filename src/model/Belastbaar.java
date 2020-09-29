@@ -2,6 +2,5 @@ package model;
 
 public interface Belastbaar {
 
-    void getVervoerBelasting(double belastbaar);
-
+    public double getVervoerBelasting();
 }

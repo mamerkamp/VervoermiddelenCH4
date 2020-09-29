@@ -4,7 +4,7 @@ package model;
  * Author: Mark Amerkamp (markamerkamp@gmail.com)
  * Veel plezier ermee!
  */
-public abstract class Vaartuig extends Vervoermiddel{
+public abstract class Vaartuig extends Vervoermiddel {
 
     private double lengteInMeter;
 
@@ -18,7 +18,7 @@ public abstract class Vaartuig extends Vervoermiddel{
     }
 
     public String toString(){
-        return String.format("%s %s %s aangedreven door %s", super.toString(), getMerk(), getType(), geefAandrijfKracht());
+        return String.format("%s %s %s aangedreven door", super.toString(), getMerk(), getType());
     }
 
     public double getLengteInMeter() {

@@ -17,4 +17,8 @@ public class Zeilboot extends Vaartuig {
         return "windkracht";
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s %s", super.toString(), geefAandrijfKracht());
+    }
 }

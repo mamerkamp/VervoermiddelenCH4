@@ -12,7 +12,7 @@ public class Auto extends Voertuig implements Belastbaar{
     public Auto(String merk, String type, int aantalWielen, int gewicht, String soortBrandstof) {
         super(merk, type, aantalWielen, gewicht);
         this.soortBrandstof = soortBrandstof;
-        getVervoerBelasting(gewicht);
+        getVervoerBelasting();
     }
 
     @Override
@@ -23,17 +23,29 @@ public class Auto extends Voertuig implements Belastbaar{
 
     @Override
     public String toString() {
-        return String.format("%s %s motor.", super.toString(), geefAandrijfKracht());
+        return String.format("%s %smotor", super.toString(), geefAandrijfKracht());
     }
 
     @Override
-    public void getVervoerBelasting(double belasting) {
-        if (getGewicht() < 1000){
-            System.out.print(" 85 euro belasting per kwartaal.\n");
-        }
-        else if (getGewicht() > 1450) {
-            System.out.print(" 100 euro belasting per kwartaal.");
-        }
+    public double getVervoerBelasting() {
+        return belastingBerekening(super.getGewicht()) * belastingToeslagBerekening(soortBrandstof);
+    }
 
+    public double belastingBerekening (int gewicht) {
+        if (gewicht < 1000) { //TODO FINAL maken van de gewichten en tarieven..
+            return 85.00;
+        } else if (gewicht >= 1450) {
+            return 122.00;
+        }
+        return 104.00;
+    }
+
+    public double belastingToeslagBerekening(String soortBrandstof){
+        if (soortBrandstof.equals("diesel")) {
+            return 1.3;
+        } else if (soortBrandstof.equals("elektrische")) {
+            return 0.5;
+        }
+        return 1;
     }
 }
