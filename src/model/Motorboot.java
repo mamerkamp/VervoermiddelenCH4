@@ -28,17 +28,24 @@ public class Motorboot extends Vaartuig implements Belastbaar{
         return belastingBerekening(super.getLengteInMeter()) * belastingToeslagBerekening(soortBrandstof);
     }
 
+    final int MAX_LENGTE_VERLAAGD_BELASTING_TARIEF = 12;
+    final double LAAG_BELASTING_TARIEF = 60.00;
+    final double HOOG_BELASTING_TARIEF = 100.00;
+
     public double belastingBerekening (double lengteInMeter) {
-        if (getLengteInMeter() < 12) { //TODO FINAL maken van de gewichten en tarieven..
-            return 60.00;
+        if (getLengteInMeter() < MAX_LENGTE_VERLAAGD_BELASTING_TARIEF) {
+            return LAAG_BELASTING_TARIEF;
         }
-        return 100.00;
+        return HOOG_BELASTING_TARIEF;
     }
+
+    final double DIESEL_BELASTING_TOESLAG = 1.3;
+    final int STANDAARD_BELASTING_TOESLAG = 1;
 
     public double belastingToeslagBerekening(String soortBrandstof){
         if (soortBrandstof.equals("diesel")) {
-            return 1.3;
+            return DIESEL_BELASTING_TOESLAG;
         }
-        return 1;
+        return STANDAARD_BELASTING_TOESLAG;
     }
 }

@@ -31,21 +31,31 @@ public class Auto extends Voertuig implements Belastbaar{
         return belastingBerekening(super.getGewicht()) * belastingToeslagBerekening(soortBrandstof);
     }
 
+    final int GEWICHT_LAAG = 1000;
+    final int GEWICHT_HOOG = 1450;
+    final double LAAG_TARIEF = 85.00;
+    final double MIDDEN_TARIEF = 104.00;
+    final double HOOG_TARIEF = 122.00;
+
     public double belastingBerekening (int gewicht) {
-        if (gewicht < 1000) { //TODO FINAL maken van de gewichten en tarieven..
-            return 85.00;
-        } else if (gewicht >= 1450) {
-            return 122.00;
+        if (gewicht < GEWICHT_LAAG) {
+            return LAAG_TARIEF;
+        } else if (gewicht >= GEWICHT_HOOG) {
+            return HOOG_TARIEF;
         }
-        return 104.00;
+        return MIDDEN_TARIEF;
     }
+
+    final double DIESEL_BELASTING_VERHOGER = 1.3;
+    final double ELEKTRISCH_BELASTING_VERLAGER = 0.5;
+    final double STANDAARD_BELASTING = 1;
 
     public double belastingToeslagBerekening(String soortBrandstof){
         if (soortBrandstof.equals("diesel")) {
-            return 1.3;
+            return DIESEL_BELASTING_VERHOGER;
         } else if (soortBrandstof.equals("elektrische")) {
-            return 0.5;
+            return ELEKTRISCH_BELASTING_VERLAGER;
         }
-        return 1;
+        return STANDAARD_BELASTING;
     }
 }
